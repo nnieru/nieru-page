@@ -1,0 +1,5 @@
+@use "../../../stylesheet/sass/components/button" as *;
+
+.button {
+  @include button();
+}
