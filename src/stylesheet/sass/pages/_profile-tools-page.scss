@@ -27,13 +27,13 @@ footer {
   max-height: 10%;
 }
 
-@media (min-width: 640px) {
+@media only screen and (min-width: 600px) {
   .content-wrapper {
     width: 50%;
   }
 }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 1040px) {
   .content-wrapper {
     width: 33.33%;
   }
