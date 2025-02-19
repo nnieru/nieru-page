@@ -1,6 +1,3 @@
-// base
-@use "./stylesheet/sass/base/base";
-@use "./stylesheet/sass/base/colors";
 @use "./stylesheet/sass/base/typography";
 
 // components
@@ -11,3 +8,54 @@
 
 // pages
 @use "@/stylesheet/sass/pages/profile-tools-page";
+
+:root {
+  --color-primary: #ff6b6b;
+  --color-secondary: #4ecdc4;
+  --color-accent: #ffe66d;
+  --color-background: #f7fff7;
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-accent: #000000;
+  --color-text: #333333;
+}
+
+:root[data-theme="dark"] {
+  --color-primary: #ff8e8e; // Slightly lighter for visibility
+  --color-secondary: #68d8d6; // Softer teal for dark contrast
+  --color-accent: #ffd166; // Warm gold accent
+  --color-background: #121212; // True dark background
+  --color-text-primary: #f1f1f1; // Light text for contrast
+  --color-text-secondary: #cccccc; // Softer gray text
+  --color-text-accent: #ffffff;
+  --color-text: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+button,
+a {
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+  color: var(--color-text-primary);
+}
+
+ul > li {
+  list-style-type: none;
+}

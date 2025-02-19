@@ -1,7 +1,20 @@
+import { useEffect } from "react";
 import Card from "../../../shared/components/card/Card";
 import CardLink from "../components/CardLink";
+import { useMeta } from "../../../app/MetaProvider";
 
 const ProfileToolsPage = () => {
+  const { setMeta } = useMeta();
+  useEffect(() => {
+    setMeta({
+      title: "Nieru Page",
+      description: "This is my compact information",
+      ogTitle: "Nieru Page",
+      ogDescription: "This is my compact information",
+      ogImage: "",
+      canonical: "https://nnieru.github.io/nieru-page/",
+    });
+  }, [setMeta]);
   return (
     <div className="container">
       <div className="inner-container">
