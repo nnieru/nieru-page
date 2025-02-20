@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Card from "../../../shared/components/card/Card";
 import CardLink from "../components/CardLink";
 import { useMeta } from "../../../app/MetaProvider";
+import { useProfile } from "../hooks/useProfile";
 
 const ProfileToolsPage = () => {
   const { setMeta } = useMeta();
@@ -15,22 +16,18 @@ const ProfileToolsPage = () => {
       canonical: "https://nnieru.github.io/nieru-page/",
     });
   }, [setMeta]);
+
+  const { profile } = useProfile();
   return (
     <div className="container">
       <div className="inner-container">
         {/* header */}
         <div className="content-wrapper">
           <Card>
-            <h2>Nathaniel Andrian </h2>
-            <div>image</div>
+            <h2> {profile?.name}</h2>
+            <div>[image]</div>
             <div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut et
-                veniam quisquam! Ipsam unde dicta, quos nulla, rem magni ut
-                dolore, veritatis tenetur alias vero expedita atque sequi ab
-                voluptatem necessitatibus explicabo itaque aspernatur optio
-                autem.
-              </p>
+              <p className="description">{profile?.description}</p>
             </div>
           </Card>
         </div>
@@ -38,18 +35,11 @@ const ProfileToolsPage = () => {
         {/* card links */}
         <div className="content-wrapper">
           <ul>
-            <li>
-              <CardLink title="link 1" key={1} url="xx" />
-            </li>
-            <li>
-              <CardLink title="link 1" key={1} url="xx" />
-            </li>
-            <li>
-              <CardLink title="link 1" key={1} url="xx" />
-            </li>
-            <li>
-              <CardLink title="link 1" key={1} url="xx" />
-            </li>
+            {profile?.links.map((link) => (
+              <li key={link.url}>
+                <CardLink title={link.title} url={link.url} icon={link.icon} />
+              </li>
+            ))}
           </ul>
         </div>
       </div>

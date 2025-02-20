@@ -27,6 +27,11 @@ footer {
   max-height: 10%;
 }
 
+.description {
+  text-overflow: ellipsis;
+  text-align: justify;
+}
+
 @media only screen and (min-width: 600px) {
   .content-wrapper {
     width: 50%;

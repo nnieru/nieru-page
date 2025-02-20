@@ -20,6 +20,20 @@
     > a {
       color: $text-color;
     }
+
+    .button-content {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: large;
+      color: black;
+
+      > img {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+      }
+    }
   }
 
   &:hover {
